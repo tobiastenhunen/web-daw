@@ -91,14 +91,17 @@ button {
 .sequencer::-webkit-scrollbar-thumb {
     background-color: var(--scrollbar-fg);
     border-radius: 20px;
+    cursor: pointer;
 }
 
 .sequencer::-webkit-scrollbar-button:single-button:horizontal:decrement {
-    background-image: url("https://api.iconify.design/lucide/chevron-left.svg?color=white")
+    background-image: url("https://api.iconify.design/lucide/chevron-left.svg?color=white");
+    cursor: pointer;
 }
 
 .sequencer::-webkit-scrollbar-button:single-button:horizontal:increment {
-    background-image: url("https://api.iconify.design/lucide/chevron-right.svg?color=white")
+    background-image: url("https://api.iconify.design/lucide/chevron-right.svg?color=white");
+    cursor: pointer;
 }
 
 
