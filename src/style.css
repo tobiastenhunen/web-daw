@@ -2,6 +2,8 @@
     --sequencer-button-size: 50px;
     --fg-primary: white ;
     --bg: #121212;
+    --scrollbar-bg: #09090e;
+    --scrollbar-fg: #cccccc;
     --visualizer-fg: var(--fg-primary);
     --sequencer-active-bg: #74c767;
 }
@@ -57,7 +59,7 @@ button {
 
 .mid-container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
     flex: 1;
     width: 100%;
@@ -81,6 +83,24 @@ button {
     max-width: 100%;
     overflow-x: auto;
 }
+
+.sequencer::-webkit-scrollbar {
+    background-color: var(--scrollbar-bg);
+}
+
+.sequencer::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fg);
+    border-radius: 20px;
+}
+
+.sequencer::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url("https://api.iconify.design/lucide/chevron-left.svg?color=white")
+}
+
+.sequencer::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url("https://api.iconify.design/lucide/chevron-right.svg?color=white")
+}
+
 
 #step-indicator, .sequencer-row {
     display: flex;
