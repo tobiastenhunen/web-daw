@@ -127,7 +127,7 @@ button {
 }
 
 .step.activated {
-    background-color: green;
+    background-color: var(--sequencer-active-bg);
     transform: scale(1.1);
 }
 
