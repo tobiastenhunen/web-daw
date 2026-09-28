@@ -1,5 +1,5 @@
 :root {
-    --sequencer-button-size: clamp(30px, 5vw, 40px);
+    --sequencer-button-size: 50px;
     --fg-primary: white ;
     --bg: #121212;
     --visualizer-fg: var(--fg-primary);
@@ -58,12 +58,14 @@ button {
 .mid-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    justify-content: space-between;
-    align-content: space-between;
+    grid-template-rows: auto 1fr;
+    flex: 1;
+    width: 100%;
     height: 100%;
 }
 
 #visualizer-container {
+    grid-column: 1 / -1;
     width: 80vw;
     height: 10vh;
     background-color: #292e3a;
@@ -74,15 +76,22 @@ button {
 
 .sequencer {
     grid-row: 2;
+    align-self: end;
+    min-width: 0;
     max-width: 100%;
     overflow-x: auto;
 }
 
-#step-indicator {
+#step-indicator, .sequencer-row {
     display: flex;
     flex-direction: row;
+    flex-wrap: nowrap;
     gap: 4px;
     margin-bottom: 10px;
+}
+
+.step, .sequencer-button {
+    flex-shrink: 0;
 }
 
 .step {
@@ -97,6 +106,10 @@ button {
 .step.activated {
     background-color: green;
     transform: scale(1.1);
+}
+
+.sequencer-row {
+    margin-bottom: 5px;
 }
 
 .sequencer-button {
