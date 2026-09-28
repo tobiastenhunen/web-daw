@@ -71,7 +71,7 @@ button {
     width: 80vw;
     height: 10vh;
     background-color: #292e3a;
-    border-radius: 10px;
+    border-radius: 0 0 10px 10px;
     justify-self: center;
     grid-row: 1;
 }
