@@ -1,0 +1,74 @@
+.sequencer {
+    grid-row: 2;
+    align-self: end;
+    min-width: 0;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.sequencer::-webkit-scrollbar {
+    background-color: var(--scrollbar-bg);
+}
+
+.sequencer::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fg);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sequencer::-webkit-scrollbar-button:single-button:horizontal:decrement {
+    background-image: url("https://api.iconify.design/lucide/chevron-left.svg?color=white");
+    cursor: pointer;
+}
+
+.sequencer::-webkit-scrollbar-button:single-button:horizontal:increment {
+    background-image: url("https://api.iconify.design/lucide/chevron-right.svg?color=white");
+    cursor: pointer;
+}
+
+
+#step-indicator, .sequencer-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 4px;
+    margin-bottom: 10px;
+}
+
+.step, .sequencer-button {
+    flex-shrink: 0;
+}
+
+.step {
+    width: var(--sequencer-button-size);
+    background-color: grey;
+    border-radius: 20px;
+    height: 10px;
+    transition: 0.15s;
+}
+
+.step.activated {
+    background-color: var(--sequencer-active-bg);
+    transform: scale(1.1);
+}
+
+.sequencer-row {
+    margin-bottom: 5px;
+}
+
+.sequencer-button {
+    background-color: #292e3a;
+    border: none;
+    border-radius: 5px;
+    transition: 0.2s;
+    height: calc(var(--sequencer-button-size) / 2);
+    width: var(--sequencer-button-size);
+}
+
+.sequencer-button.active {
+    background-color: var(--sequencer-active-bg);
+}
+
+.sequencer-button:hover {
+    transform: scale(1.1);
+}
