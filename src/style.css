@@ -119,7 +119,6 @@ button {
 
 .step {
     width: var(--sequencer-button-size);
-    height: calc(var(--sequencer-button-size) / 2);
     background-color: grey;
     border-radius: 20px;
     height: 10px;
@@ -198,16 +197,6 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
-}
-
-#pan-slider {
-    width: 50%;
-    height: 50%;
-}
-
-#pan-slider::-webkit-slider-runnable-track {
-    background-color: rgb(49, 49, 49);
-    border-radius: 10px;;
 }
 
 #keys {
