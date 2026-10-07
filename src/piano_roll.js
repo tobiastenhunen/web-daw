@@ -64,6 +64,14 @@ export function setVolume(value) {
     pianoSynth.volume.rampTo(value)
 }
 
+export function setAttack(seconds) {
+    pianoSynth.set({envelope: {attack: seconds}})
+}
+
+export function setRelease(seconds) {
+    pianoSynth.set({envelope: {release: seconds}})
+}
+
 function pointerNotePlay(note) {
     pianoSynth.triggerAttack(note)
     pointerNote = note

@@ -10,6 +10,9 @@ const endRecordingBtn = document.getElementById("end-recording")
 const shapeSelect = document.getElementById("shape-select")
 const panKnob = document.getElementById("pan-knob")
 const mixKnob = document.getElementById("mix-knob")
+const attackKnob = document.getElementById("attack-knob")
+const releaseKnob = document.getElementById("release-knob")
+
 
 function init() {
   console.log(Tone.Synth.getDefaults().oscillator.type)
@@ -25,6 +28,8 @@ function initButtons() {
   shapeSelect.addEventListener("change", () => {Piano.setShape(shapeSelect.value)})
   panKnob.addEventListener("change", () => {Piano.setPan(panKnob.value)})
   mixKnob.addEventListener("change", () => {Piano.setVolume(mixKnob.value)})
+  attackKnob.addEventListener("change", () => {Piano.setAttack(attackKnob.value)})
+  releaseKnob.addEventListener("change", () => {Piano.setRelease(releaseKnob.value)})
 }
 
 function togglePause() {
