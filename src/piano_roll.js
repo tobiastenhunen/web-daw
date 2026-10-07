@@ -3,6 +3,9 @@ import { recorder } from "./recorder.js"
 
 let pianoSynth = new Tone.PolySynth
 let panner = new Tone.Panner
+let currentNote
+let pointerDown = false
+let pointerNote
 
 // Some shapes seem to be much louder than others, this should compensate for that.
 const louderShapes = ["square", "sawtooth"]
@@ -61,16 +64,41 @@ export function setVolume(value) {
     pianoSynth.volume.rampTo(value)
 }
 
+function pointerNotePlay(note) {
+    pianoSynth.triggerAttack(note)
+    pointerNote = note
+}
+
+function pointerNoteStop() {
+    pianoSynth.triggerRelease(pointerNote)
+    pointerNote = null
+}
+
+document.addEventListener("pointerup", () => {
+    pointerDown = false
+    pointerNoteStop()
+})
+
+document.addEventListener("pointercancel", () => {
+    pointerDown = false
+    pointerNoteStop()
+}) 
+
+
 function addKeyEventListener(key, noteIndex, octave = 4) {
-    key.addEventListener("mousedown", () => {
+    const note = `${notes[noteIndex]}${octave}`
+    key.addEventListener("pointerdown", (e) => {
+        pointerDown = true
         Tone.start()
-        var attack = pianoSynth.triggerAttack(`${notes[noteIndex]}${octave}`)
+        pointerNotePlay(note)
+        key.addEventListener("pointerleave", stopPlaying)
+    })
 
-        const stopPlaying = () => {
-            attack.releaseAll()
-            key.removeEventListener("mouseup", stopPlaying)
-        }
+    key.addEventListener("pointerenter", () => {
+        if (pointerDown) {pointerNotePlay(note)}
+    })
 
-        window.addEventListener("mouseup", stopPlaying)
+    key.addEventListener("pointerleave", () => {
+        if (pointerNote === note) {pointerNoteStop()}
     })
 }
