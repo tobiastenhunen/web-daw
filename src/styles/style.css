@@ -2,6 +2,7 @@
 @import "./visualizer.css";
 @import "./sequencer.css";
 @import "./piano.css";
+@import "./effects.css";
 
 :root {
     --sequencer-button-size: 50px;
@@ -27,6 +28,10 @@ body {
     background-color: var(--bg);
 }
 
+body, a, label, select {
+    font-family:'Courier New', Courier, monospace;
+}
+
 main {
     display: flex;
     flex-direction: column;
@@ -37,10 +42,20 @@ button {
     cursor: pointer;
 }
 
+
+select {
+    color: white;
+    background-color: rgb(49, 49, 49);
+    border-radius: 4px;
+    border: none;
+    padding: 8px;
+}
+
 .mid-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-template-rows: auto 1fr;
+    align-items: end;
     flex: 1;
     width: 100%;
     height: 100%;

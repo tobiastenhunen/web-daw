@@ -1,4 +1,5 @@
 import {init as initSequencer} from "./sequencer.js"
+import { init as initEffects } from "./effects/effects.js"
 import { toggleRecording, finishRecording, recorder } from "./recorder.js"
 import * as Piano from "./piano_roll.js"
 import * as Tone from "tone"
@@ -19,6 +20,7 @@ function init() {
   initSequencer()
   Piano.init()
   initButtons()
+  initEffects()
   draw()
 }
 
@@ -66,4 +68,4 @@ function updatePauseButton() {
   }
 }
 
-addEventListener("DOMContentLoaded", init)
+addEventListener("load", init)

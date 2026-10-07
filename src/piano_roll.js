@@ -1,5 +1,5 @@
 import * as Tone from "tone"
-import { recorder } from "./recorder.js"
+import { effectsInput, effectsOutput } from "./effects/effects.js"
 
 let pianoSynth = new Tone.PolySynth
 let panner = new Tone.Panner
@@ -11,8 +11,8 @@ let pointerNote
 const louderShapes = ["square", "sawtooth"]
 const louderShapesVolume = -14
 
-pianoSynth.connect(panner)
-panner.connect(recorder)
+pianoSynth.connect(effectsInput)
+effectsOutput.connect(panner)
 panner.toDestination()
 
 const notes = [
@@ -99,7 +99,6 @@ function addKeyEventListener(key, noteIndex, octave = 4) {
         pointerDown = true
         Tone.start()
         pointerNotePlay(note)
-        key.addEventListener("pointerleave", stopPlaying)
     })
 
     key.addEventListener("pointerenter", () => {

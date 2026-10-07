@@ -1,5 +1,4 @@
 import * as Tone from "tone"
-import { recorder, finishRecording } from "./recorder.js"
 
 const noteMap = { // Class name to note.
     "bass": "C2",
@@ -18,11 +17,6 @@ const stepIndicator = document.getElementById("step-indicator")
 let snareSynth = new Tone.Synth
 let hihatSynth = new Tone.PluckSynth
 let bassSynth = new Tone.MembraneSynth
-
-snareSynth.connect(recorder)
-hihatSynth.connect(recorder)
-bassSynth.connect(recorder)
-
 
 snareSynth.toDestination()
 bassSynth.toDestination()
