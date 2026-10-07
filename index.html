@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://g200kg.github.io/webaudio-controls/webaudio-controls.js"></script>
     <title>Browser DAW</title>
-  <script type="module" crossorigin src="/assets/index-lyMLWb7E.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CfL6-vfC.css">
+  <script type="module" crossorigin src="/assets/index-DcVJ5J0c.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-C_cwY4Xh.css">
 </head>
 <body>
     <main>
@@ -90,6 +90,58 @@
                     <button class="sequencer-button bass"></button>
                     <button class="sequencer-button bass"></button>
                     <button class="sequencer-button bass"></button>
+                </div>
+            </section>
+            <section class="effects-container">
+                <div class="effect">
+                    <h3>Filter</h3>
+                    <div class="effect-setting">
+                        <label for="effect-mix">Mix</label>
+                        <webaudio-knob data-effect="filter" id="filter-mix" class="effect-mix-knob" name="effect-mix" min="0" max="1" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                    </div>
+                    <div class="effect-setting">
+                        <label for="effect-param">Type</label>
+                        <select data-effect="filter" data-param="type" class="effect-param" name="effect-param">
+                            <option value="lowpass">lowpass</option>
+                            <option value="highpass">highpass</option>
+                            <option value="bandpass">bandpass</option>
+                            <option value="lowshelf">lowshelf</option>
+                            <option value="highshelf">highshelf</option>
+                            <option value="notch">notch</option>
+                            <option value="allpass">allpass</option>
+                            <option value="peaking">peaking</option>
+                        </select>
+                    </div>
+                    <div class="effect-setting">
+                        <label for="effect-param">Freq</label>
+                        <div class="effect-range-container">
+                            <p>200hz</p>
+                            <input type="range" data-effect="filter" data-param="frequency" class="effect-param effect-param-slider" name="filter-freq" min="200" max="10000" value="200"></input>
+                            <p>10khz</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="effect">
+                    <h3>Distortion</h3>
+                    <div class="effect-setting">
+                        <label for="effect-mix">Mix</label>
+                        <webaudio-knob data-effect="distortion" data-param="wet" class="effect-mix-knob" name="effect-mix" min="0" max="1" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                    </div>
+                    <div class="effect-setting">
+                        <label for="effect-param">Lvl</label>
+                        <webaudio-knob data-effect="distortion" data-param="distortion" class="effect-param" name="effect-param" min="0" max="1" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                    </div>
+                </div>
+                <div class="effect">
+                    <h3>Reverb</h3>
+                    <div class="effect-setting">
+                        <label for="effect-mix">Mix</label>
+                        <webaudio-knob data-effect="reverb" data-param="wet" class="effect-mix-knob" name="effect-mix" min="0" max="1" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                    </div>
+                    <div class="effect-setting">
+                        <label for="effect-param">Lvl</label>
+                        <webaudio-knob data-effect="reverb" data-param="decay" class="effect-param" name="effect-param" min="0" max="10" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                    </div>
                 </div>
             </section>
         </div>
