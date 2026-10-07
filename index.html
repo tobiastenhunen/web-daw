@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://g200kg.github.io/webaudio-controls/webaudio-controls.js"></script>
     <title>Browser DAW</title>
-  <script type="module" crossorigin src="/assets/index-Bif7zzid.js"></script>
+  <script type="module" crossorigin src="/assets/index-B6EX9fAV.js"></script>
   <link rel="stylesheet" crossorigin href="/assets/index-f2LyjcZ4.css">
 </head>
 <body>
@@ -97,16 +97,20 @@
             <section class="piano-roll">
                 <div id="piano-settings">
                     <div class="synth-setting">
-                        <webaudio-knob id="mix-knob" name="mix-knob" min="-20" max="10" value="0" step="0.1" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                        <webaudio-knob id="mix-knob" name="mix-knob" min="-20" max="10" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
                         <label for="mix-knob">Mix</label>
                     </div>
                     <div class="synth-setting">
-                        <webaudio-knob id="pan-knob" name="pan-knob" min="-1" max="1" value="0" step="0.1" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                        <webaudio-knob id="pan-knob" name="pan-knob" min="-1" max="1" value="0" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
                         <label for="pan-knob">Pan</label>
                     </div>
                     <div class="synth-setting">
-                        <webaudio-knob id="attack-knob" name="attack-knob" min="-1" max="1" value="0" step="0.1" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                        <webaudio-knob id="attack-knob" name="attack-knob" min="0.002" max="10" value="0.002" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
                         <label for="attack-knob">Att</label>
+                    </div>
+                    <div class="synth-setting">
+                        <webaudio-knob id="release-knob" name="release-knob" min="0.002" max="10" value="0.5" step="0.001" diameter="40" colors="#fff; rgb(49, 49, 49); rgb(49, 49, 49)"></webaudio-knob>
+                        <label for="release-knob">Rel</label>
                     </div>
                     <div class="synth-setting">
                         <select id="shape-select" name="shape">
