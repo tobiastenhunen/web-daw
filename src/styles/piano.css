@@ -25,6 +25,11 @@
     justify-content: flex-end;
 }
 
+#voices-input {
+    color: white;
+    text-align: center;
+}
+
 #keys {
     display: flex;
 }

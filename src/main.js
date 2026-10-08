@@ -13,6 +13,7 @@ const panKnob = document.getElementById("pan-knob")
 const mixKnob = document.getElementById("mix-knob")
 const attackKnob = document.getElementById("attack-knob")
 const releaseKnob = document.getElementById("release-knob")
+const voicesInput = document.getElementById("voices-input")
 
 
 function init() {
@@ -32,6 +33,7 @@ function initButtons() {
   mixKnob.addEventListener("change", () => {Piano.setVolume(mixKnob.value)})
   attackKnob.addEventListener("change", () => {Piano.setAttack(attackKnob.value)})
   releaseKnob.addEventListener("change", () => {Piano.setRelease(releaseKnob.value)})
+  voicesInput.addEventListener("change", () => {Piano.setVoices(voicesInput.value)})
 }
 
 function togglePause() {
