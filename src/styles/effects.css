@@ -44,7 +44,6 @@
 
 .effect-param-slider {
     height: 20px;
-    width: 100px;
 }
 
 @media (max-width: 900px) {
@@ -53,5 +52,9 @@
         align-items: flex-start;
         gap: 10px;
         margin-top: 20px
+    }
+
+    .effect-param-slider {
+        width: max(50%, 50px);
     }
 }
