@@ -28,12 +28,12 @@ function init() {
 function initButtons() {
   togglePauseBtn.addEventListener("click", togglePause)
   endRecordingBtn.addEventListener("click", finishRecording)
-  shapeSelect.addEventListener("change", () => {Piano.setShape(shapeSelect.value)})
-  panKnob.addEventListener("change", () => {Piano.setPan(panKnob.value)})
-  mixKnob.addEventListener("change", () => {Piano.setVolume(mixKnob.value)})
-  attackKnob.addEventListener("change", () => {Piano.setAttack(attackKnob.value)})
-  releaseKnob.addEventListener("change", () => {Piano.setRelease(releaseKnob.value)})
-  voicesInput.addEventListener("change", () => {Piano.setVoices(voicesInput.value)})
+  shapeSelect.addEventListener("input", () => {Piano.setShape(shapeSelect.value)})
+  panKnob.addEventListener("input", () => {Piano.setPan(panKnob.value)})
+  mixKnob.addEventListener("input", () => {Piano.setVolume(mixKnob.value)})
+  attackKnob.addEventListener("input", () => {Piano.setAttack(attackKnob.value)})
+  releaseKnob.addEventListener("input", () => {Piano.setRelease(releaseKnob.value)})
+  voicesInput.addEventListener("input", () => {Piano.setVoices(voicesInput.value)})
 }
 
 function togglePause() {
