@@ -2,7 +2,6 @@
     grid-row: 2;
     align-self: end;
     justify-self: stretch;
-    width: 100%;
     overflow-x: auto;
 }
 

@@ -69,7 +69,7 @@ select:focus, input[type="number"]:focus {
 
 .mid-container {
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+    grid-template-columns: auto auto;
     grid-template-rows: auto 1fr;
     align-items: end;
     flex: 1;
@@ -84,10 +84,4 @@ select:focus, input[type="number"]:focus {
     margin-top: auto;
     width: 100%;
     user-select: none;
-}
-
-@media (max-width: 750px) {
-    .mid-container {
-        grid-template-columns: 1fr 1fr;
-    }
 }

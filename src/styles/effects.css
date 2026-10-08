@@ -1,6 +1,5 @@
 .effects-container {
     display: flex;
-    align-items: center;
     justify-self: end;
     flex-direction: column;
     gap: 20px;
