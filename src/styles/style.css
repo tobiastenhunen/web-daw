@@ -33,6 +33,16 @@ body, a, label, select {
     font-family:'Courier New', Courier, monospace;
 }
 
+*::-webkit-scrollbar {
+    background-color: var(--scrollbar-bg);
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-fg);
+    border-radius: 20px;
+    cursor: pointer;
+}
+
 main {
     display: flex;
     flex-direction: column;

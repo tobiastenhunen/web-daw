@@ -6,16 +6,6 @@
     overflow-x: auto;
 }
 
-.sequencer::-webkit-scrollbar {
-    background-color: var(--scrollbar-bg);
-}
-
-.sequencer::-webkit-scrollbar-thumb {
-    background-color: var(--scrollbar-fg);
-    border-radius: 20px;
-    cursor: pointer;
-}
-
 .sequencer::-webkit-scrollbar-button:single-button:horizontal:decrement {
     background-image: url("https://api.iconify.design/lucide/chevron-left.svg?color=white");
     cursor: pointer;
