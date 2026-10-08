@@ -1,11 +1,13 @@
 .effects-container {
     display: flex;
     align-items: center;
+    justify-self: end;
     flex-direction: column;
     gap: 20px;
     border: 4px solid var(--scrollbar-bg);
     padding: 20px 0;
     height: 50vh;
+    width: fit-content;
     overflow-y: auto;
 }
 
@@ -56,5 +58,11 @@
 
     .effect-param-slider {
         width: max(50%, 50px);
+    }
+}
+
+@media (max-width: 400px) {
+    .effect {
+        padding: 30px 5px;
     }
 }
