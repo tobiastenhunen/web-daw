@@ -91,9 +91,3 @@ select:focus, input[type="number"]:focus {
         grid-template-columns: 1fr 1fr;
     }
 }
-
-/* @media (max-width: 450px) {
-    .mid-container {
-        grid-template-columns: 1fr 2fr;
-    }
-} */
