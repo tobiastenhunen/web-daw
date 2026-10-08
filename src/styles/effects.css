@@ -47,6 +47,10 @@
     height: 20px;
 }
 
+.effect-param-number {
+    width: 80px;
+}
+
 @media (max-width: 900px) {
     .effect-setting {
         flex-direction: column;
