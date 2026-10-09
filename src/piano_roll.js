@@ -1,11 +1,14 @@
 import * as Tone from "tone"
 import { effectsInput, effectsOutput } from "./effects/effects.js"
+import { KEY_TO_NOTES } from "./key_to_note.js"
 
 let pianoSynth = new Tone.PolySynth
 let panner = new Tone.Panner
 let currentNote
 let pointerDown = false
 let pointerNote
+
+const keyboardNotesPlaying = new Set()
 
 // Some shapes seem to be much louder than others, this should compensate for that.
 const louderShapes = ["square", "sawtooth"]
@@ -36,6 +39,14 @@ export function init() {
             addKeyEventListener(key, currentNoteIndex, currentOctave)
             currentNoteIndex++
         })
+    })
+
+    addEventListener("keydown", (e) => {
+        playKeyboardNote(e)
+    })
+
+    addEventListener("keyup", (e) => {
+        releaseKeyboardNote(e)
     })
 
     setShape("triangle")
@@ -86,6 +97,24 @@ function pointerNoteStop() {
     pointerNote = null
 }
 
+function playKeyboardNote(event) {
+    if (!KEY_TO_NOTES[event.code]) {
+        return
+    }
+
+    pianoSynth.triggerAttack(KEY_TO_NOTES[event.code])
+    keyboardNotesPlaying.add(event.code)
+}
+
+function releaseKeyboardNote(event) {
+    if (keyboardNotesPlaying.has(event.code)) {
+        console.log("Releasing")
+        const note = KEY_TO_NOTES[event.code]
+        pianoSynth.triggerRelease(note)
+        keyboardNotesPlaying.delete(event.code)
+    }
+}
+
 document.addEventListener("pointerup", () => {
     pointerDown = false
     pointerNoteStop()
@@ -94,8 +123,7 @@ document.addEventListener("pointerup", () => {
 document.addEventListener("pointercancel", () => {
     pointerDown = false
     pointerNoteStop()
-}) 
-
+})
 
 function addKeyEventListener(key, noteIndex, octave = 4) {
     const note = `${notes[noteIndex]}${octave}`
