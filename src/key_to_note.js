@@ -1,15 +1,15 @@
 export const KEY_TO_NOTES = {
   // number row
-  'Digit2': 'C#1',
-  'Digit3': 'D#2',
-  'Digit5': 'F#2',
-  'Digit6': 'G#2',
-  'Digit7': 'A#2',
-  'Digit9': 'C#3',
-  'Digit0': 'D#3',
+  'Digit2': 'C#3',
+  'Digit3': 'D#3',
+  'Digit5': 'F#3',
+  'Digit6': 'G#3',
+  'Digit7': 'A#3',
+  'Digit9': 'C#4',
+  'Digit0': 'D#4',
 
   // top letter row
-  'KeyQ': 'C2',
+  'KeyQ': 'C3',
   'KeyW': 'D3',
   'KeyE': 'E3',
   'KeyR': 'F3',

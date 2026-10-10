@@ -9,6 +9,7 @@ let pointerDown = false
 let pointerNote
 
 const keyboardNotesPlaying = new Set()
+const noteToButton = {}
 
 // Some shapes seem to be much louder than others, this should compensate for that.
 const louderShapes = ["square", "sawtooth"]
@@ -98,8 +99,13 @@ function pointerNoteStop() {
 }
 
 function playKeyboardNote(event) {
-    if (!KEY_TO_NOTES[event.code]) {
+    if (!KEY_TO_NOTES[event.code] || keyboardNotesPlaying.has(event.code)) {
         return
+    }
+
+    if (noteToButton[KEY_TO_NOTES[event.code]]) {
+        noteToButton[KEY_TO_NOTES[event.code]].classList.add("active")
+        console.log(noteToButton[KEY_TO_NOTES[event.code]])
     }
 
     pianoSynth.triggerAttack(KEY_TO_NOTES[event.code])
@@ -140,4 +146,6 @@ function addKeyEventListener(key, noteIndex, octave = 4) {
     key.addEventListener("pointerleave", () => {
         if (pointerNote === note) {pointerNoteStop()}
     })
+
+    noteToButton[note] = key
 }
