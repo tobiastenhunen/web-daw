@@ -52,4 +52,6 @@ export function init(){
         effects.feedbackDelay,
         effectsOutput
     )
+
+    effects.chorus.start()
 }
