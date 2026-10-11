@@ -84,10 +84,6 @@ export function setRelease(seconds) {
     pianoSynth.set({envelope: {release: seconds}})
 }
 
-export function setVoices(amount) {
-    pianoSynth.maxPolyphony = amount
-}
-
 function pointerNotePlay(note) {
     pianoSynth.triggerAttack(note)
     pointerNote = note
