@@ -29,7 +29,6 @@ let currentOctave = 2 // Also the lowest/starting octave
 
 export function init() {
     const keyContainers = document.getElementById("keys").children
-
     let currentNoteIndex = 0
     Array.from(keyContainers).forEach((container) => {
         Array.from(container.children).forEach((key) => {
@@ -51,6 +50,22 @@ export function init() {
     })
 
     setShape("triangle")
+}
+
+function triggerAttack(note) {
+    pianoSynth.triggerAttack(note)
+
+    if (noteToButton[note]) {
+        noteToButton[note].classList.add("active")
+    }
+}
+
+function triggerRelease(note) {
+    pianoSynth.triggerRelease(note)
+
+    if (noteToButton[note]) {
+        noteToButton[note].classList.remove("active")
+    }
 }
 
 export function setShape(shape) {
@@ -89,12 +104,12 @@ export function setVoices(amount) {
 }
 
 function pointerNotePlay(note) {
-    pianoSynth.triggerAttack(note)
+    triggerAttack(note)
     pointerNote = note
 }
 
 function pointerNoteStop() {
-    pianoSynth.triggerRelease(pointerNote)
+    triggerRelease(pointerNote)
     pointerNote = null
 }
 
@@ -103,12 +118,7 @@ function playKeyboardNote(event) {
         return
     }
 
-    if (noteToButton[KEY_TO_NOTES[event.code]]) {
-        noteToButton[KEY_TO_NOTES[event.code]].classList.add("active")
-        console.log(noteToButton[KEY_TO_NOTES[event.code]])
-    }
-
-    pianoSynth.triggerAttack(KEY_TO_NOTES[event.code])
+    triggerAttack(KEY_TO_NOTES[event.code])
     keyboardNotesPlaying.add(event.code)
 }
 
@@ -116,7 +126,7 @@ function releaseKeyboardNote(event) {
     if (keyboardNotesPlaying.has(event.code)) {
         console.log("Releasing")
         const note = KEY_TO_NOTES[event.code]
-        pianoSynth.triggerRelease(note)
+        triggerRelease(note)
         keyboardNotesPlaying.delete(event.code)
     }
 }

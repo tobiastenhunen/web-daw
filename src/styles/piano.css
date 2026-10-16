@@ -53,10 +53,6 @@
     transition: 0.1s;
 }
 
-.key:focus {
-    transform: rotateX(10deg);
-}
-
 .key:not(.black) {
     background: linear-gradient(
         to right,
@@ -65,6 +61,17 @@
         white 90%,
         rgb(212, 212, 212)
     );
+}
+
+
+.key:not(.black).active {
+    transform: rotateX(10deg);
+    background: linear-gradient(to bottom, white, rgb(215, 213, 213));
+    
+}
+
+.key.black.active {
+    background: linear-gradient(to bottom, black, grey)
 }
 
 .black {
